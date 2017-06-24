@@ -1,6 +1,6 @@
 # algorithmDesignManualJS
 
-Implementation of exercises from [The Algorithm Design Manual](http://www.algorist.com/) in JavaScript.
+Solution to exercises in [The Algorithm Design Manual](http://www.algorist.com/) coded in JavaScript.
 
 Project uses Mocha.js and Chai.js test libraries.
 
