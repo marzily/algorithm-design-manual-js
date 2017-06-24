@@ -21,3 +21,6 @@ var properlyNested = function(string) {
     return indexedParens[0][0];
   }
 };
+
+
+module.exports = properlyNested;
