@@ -1,4 +1,7 @@
-/* Give an algorithm that returns true if a string contains properly nested and balanced parentheses, and false otherwise. For full credit, identify the position of the first offending parenthesis if the string is not properly nested and balanced. */
+/* Give an algorithm that returns true if a string contains properly nested and
+balanced parentheses, and false otherwise. For full credit, identify the
+position of the first offending parenthesis if the string is not properly
+nested and balanced. */
 
 var properlyNested = function(string) {
   var indexedParens = [];
