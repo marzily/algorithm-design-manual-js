@@ -30,16 +30,16 @@ LinkedList.prototype.length = function() {
   return length;
 };
 
-LinkedList.prototype.reverse = function() {
-  if (this.next === null) {
-    return this;
+LinkedList.prototype.reverse = function(head) {
+  if (head.next === null) {
+    return head;
   }
 
-  var newHead = this.next;
+  var newHead = head.next;
   var restOfList = newHead.next;
 
-  this.next = null;
-  newHead.next = this;
+  head.next = null;
+  newHead.next = head;
 
   while (restOfList !== null) {
     var oldNode = newHead;
