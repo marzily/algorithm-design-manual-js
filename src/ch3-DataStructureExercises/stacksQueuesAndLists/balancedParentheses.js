@@ -4,7 +4,7 @@ balanced parentheses, and false otherwise. For full credit, identify the
 position of the first offending parenthesis if the string is not properly
 nested and balanced. */
 
-var properlyNested = function(string) {
+function properlyNested(string) {
   var indexedParens = [];
 
   for (var i = 0; i < string.length; i++) {
