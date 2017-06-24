@@ -1,4 +1,5 @@
-/* Give an algorithm that returns true if a string contains properly nested and
+/* Problem 3-1, page 98
+Give an algorithm that returns true if a string contains properly nested and
 balanced parentheses, and false otherwise. For full credit, identify the
 position of the first offending parenthesis if the string is not properly
 nested and balanced. */
