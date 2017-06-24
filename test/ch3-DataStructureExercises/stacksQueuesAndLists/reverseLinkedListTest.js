@@ -13,8 +13,8 @@ describe("2. Reverse a Singly-Linked List", function() {
       assert.equal(head.next, null);
     });
 
-    it("tracks its total length", function() {
-      assert.equal(head.length, 1);
+    it("tracks its total length()", function() {
+      assert.equal(head.length(), 1);
     });
 
     it("correctly assigns a new node to its next pointer", function() {
@@ -24,32 +24,36 @@ describe("2. Reverse a Singly-Linked List", function() {
     });
 
     it("tracks how many nodes there are in a list", function() {
-      assert.equal(head.length, 2);
+      assert.equal(head.length(), 2);
 
       head.append(3);
 
-      assert.equal(head.length, 3);
+      assert.equal(head.length(), 3);
     });
   });
 
   describe("Reverse Linked List", function() {
     it("there is no change if there is only one node", function() {
       var singleNode = new LinkedList(0);
-      var reversedSingleNode = singleNode.reverse(singleNode);
+      var reversedSingleNode = singleNode.reverse();
 
       assert.equal(reversedSingleNode.data, 0);
       assert.equal(reversedSingleNode.next, null);
+
+      assert.equal(reversedSingleNode.length(), 1);
     });
 
     it("reverses a singly-linked list", function() {
       var list = new LinkedList(1);
       list.append(2);
       list.append(3);
-      var reversedList = list.reverse(list);
+      var reversedList = list.reverse();
 
       assert.equal(reversedList.data, 3);
       assert.equal(reversedList.next.data, 2);
       assert.equal(reversedList.next.next.data, 1);
+
+      assert.equal(reversedList.length(), 3);
     });
   });
 });
