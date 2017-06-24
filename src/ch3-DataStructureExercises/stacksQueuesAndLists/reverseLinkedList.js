@@ -22,7 +22,7 @@ LinkedList.prototype.append = function(val) {
 };
 
 LinkedList.prototype.reverse = function(head) {
-  if (this.next === null) {
+  if (head.next === null) {
     return head;
   }
 

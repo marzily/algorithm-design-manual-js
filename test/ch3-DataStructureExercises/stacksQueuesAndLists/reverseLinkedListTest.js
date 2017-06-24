@@ -35,10 +35,10 @@ describe("2. Reverse a Singly-Linked List", function() {
   describe("Reverse Linked List", function() {
     it("there is no change if there is only one node", function() {
       var singleNode = new LinkedList(0);
-      singleNode.reverse();
+      var reversedSingleNode = singleNode.reverse(singleNode);
 
-      assert.equal(singleNode.data, 0);
-      assert.equal(singleNode.next, null);
+      assert.equal(reversedSingleNode.data, 0);
+      assert.equal(reversedSingleNode.next, null);
     });
 
     it("reverses a singly-linked list", function() {
