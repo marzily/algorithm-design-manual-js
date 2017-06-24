@@ -13,7 +13,7 @@ describe("2. Reverse a Singly-Linked List", function() {
       assert.equal(head.next, null);
     });
 
-    it("tracks its total length()", function() {
+    it("tracks its total length", function() {
       assert.equal(head.length(), 1);
     });
 
