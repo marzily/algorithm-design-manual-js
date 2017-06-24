@@ -1,9 +1,9 @@
 var assert = require('../../../_vendor/chai').assert;
-var Node = require('../../../src/ch3-DataStructureExercises/stacksQueuesAndLists/reverseLinkedList');
+var LinkedList = require('../../../src/ch3-DataStructureExercises/stacksQueuesAndLists/reverseLinkedList');
 
 describe("2. Reverse a Singly-Linked List", function() {
   describe("Linked List", function() {
-    var head = new Node(1);
+    var head = new LinkedList(1);
 
     it("has data at its head node", function() {
       assert.equal(head.data, 1);
@@ -33,21 +33,23 @@ describe("2. Reverse a Singly-Linked List", function() {
   });
 
   describe("Reverse Linked List", function() {
-    var singleNode = new Node(0);
-
     it("there is no change if there is only one node", function() {
+      var singleNode = new LinkedList(0);
       singleNode.reverse();
 
       assert.equal(singleNode.data, 0);
       assert.equal(singleNode.next, null);
     });
 
-    xit("reverses a singly-linked list", function() {
-      head.reverse();
+    it("reverses a singly-linked list", function() {
+      var list = new LinkedList(1);
+      list.append(2);
+      list.append(3);
+      var reversedList = list.reverse(list);
 
-      assert.equal(head.data, 3);
-      assert.equal(head.next.data, 2);
-      assert.equal(head.next.next.data, 1);
+      assert.equal(reversedList.data, 3);
+      assert.equal(reversedList.next.data, 2);
+      assert.equal(reversedList.next.next.data, 1);
     });
   });
 });

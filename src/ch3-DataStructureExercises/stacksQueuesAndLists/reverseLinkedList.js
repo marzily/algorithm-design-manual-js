@@ -3,13 +3,13 @@ Write a program to reverse the direction of a given singly-linked list. In
 other words, after the reversal all pointers should now point backwards. Your
 algorithm should take linear time. */
 
-function Node(val) {
+function LinkedList(val) {
   this.data = val;
   this.next = null;
   this.length = 1;
 }
 
-Node.prototype.append = function(val) {
+LinkedList.prototype.append = function(val) {
   var current = this;
 
   while (current.next !== null) {
@@ -18,22 +18,29 @@ Node.prototype.append = function(val) {
   }
 
   current.length += 1;
-  current.next = new Node(val);
+  current.next = new LinkedList(val);
 };
 
-Node.prototype.reverse = function() {
+LinkedList.prototype.reverse = function(head) {
   if (this.next === null) {
-    return;
+    return head;
   }
 
-  // var old_head = this;
-  // var current = this.next;
-  //
-  // while (new_head.next !== null) {
-  //
-  // }
-  //
-  // return new_head;
+  var newHead = head.next;
+  var restOfList = newHead.next;
+
+  head.next = null;
+  newHead.next = head;
+
+  while (restOfList !== null) {
+    var oldNode = newHead;
+    newHead = restOfList;
+    restOfList = restOfList.next;
+
+    newHead.next = oldNode;
+  }
+
+  return newHead;
 }
 
-module.exports = Node;
+module.exports = LinkedList;
