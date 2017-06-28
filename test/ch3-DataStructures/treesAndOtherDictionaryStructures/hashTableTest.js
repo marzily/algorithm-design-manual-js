@@ -2,13 +2,13 @@ var assert = require('../../../_vendor/chai').assert;
 var hashTable = require('../../../src/ch3-DataStructures/treesAndOtherDictionaryStructures/hashTable');
 
 describe("4. Hash Table", function() {
+  var hash = new hashTable(3);
+  
   it("initializes with an input size", function() {
-    var hash = new hashTable(3);
-
     assert.equal(hash.inputSize, 3);
   });
 
-  xit("has a load factor", function() {
+  it("has a load factor", function() {
     assert.equal(hash.loadFactor, 0.75);
   });
 
