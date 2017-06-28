@@ -25,7 +25,7 @@ describe("4. Hash Table", function() {
   });
 
   xdescribe("hash table operations", function() {
-    var hashWithInputs = new HashTable();
+    var hashWithInputs = new hashTable();
 
     xit("allows insertion", function() {
 
