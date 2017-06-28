@@ -20,6 +20,13 @@ describe("4. Hash Table", function() {
     assert.equal(hash.bins.length, 8);
   });
 
+  it("resizes bins based on its input size ", function() {
+    hash.resetSize(9);
+
+    assert.equal(hash.inputSize, 9);
+    assert.equal(hash.bins.length, 24);
+  });
+
   xdescribe("hash table operations", function() {
     // var hashWithInputs = new hashTable();
 

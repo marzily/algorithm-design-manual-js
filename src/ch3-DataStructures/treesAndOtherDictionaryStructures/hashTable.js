@@ -4,8 +4,8 @@ be processed in O(1) time in the worst case. You may assume the set elements are
 integers drawn from a finite set 1, 2, .., n, and initialization can take O(n)
 time. */
 
-function HashTable(size) {
-  this.inputSize = size;
+function HashTable(inputSize) {
+  this.inputSize = inputSize;
   this.loadFactor = 0.75;
   this.sizeBins();
 }
@@ -13,6 +13,11 @@ function HashTable(size) {
 HashTable.prototype.sizeBins = function() {
   var lengthBins = (this.inputSize / this.loadFactor) * 2;
   this.bins = new Array(lengthBins);
+};
+
+HashTable.prototype.resetSize = function(inputSize) {
+  this.inputSize = inputSize;
+  this.sizeBins();
 };
 
 module.exports = HashTable;
