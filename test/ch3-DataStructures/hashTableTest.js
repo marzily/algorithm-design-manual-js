@@ -27,7 +27,7 @@ describe("4. Hash Table", function() {
       assert.equal(hash.bins.length, 8);
     });
 
-    xit("shrinks bins if input size shrinks below threshold", function() {
+    it("shrinks bins if input size shrinks below threshold", function() {
       hash.resetSize(2);
       assert.equal(hash.inputSize, 2);
       assert.equal(hash.bins.length, 4);
