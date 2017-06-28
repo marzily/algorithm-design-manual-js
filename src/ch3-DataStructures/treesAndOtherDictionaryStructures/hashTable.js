@@ -7,29 +7,12 @@ time. */
 function HashTable(size) {
   this.inputSize = size;
   this.loadFactor = 0.75;
-  this.bins = [];
+  this.sizeBins();
 }
 
-HashTable.prototype.checkInputSize = function() {
-
+HashTable.prototype.sizeBins = function() {
+  var lengthBins = (this.inputSize / this.loadFactor) * 2;
+  this.bins = new Array(lengthBins);
 };
-
-
-function checkInputSize(inputSize) {
-
-}
-
-
-
-
-HashTable.prototype.sizeBins = function(inputSize) {
-  this.inputSize = inputSize;
-  this.bins = new Array(this.inputSize / this.loadFactor);
-};
-
-
-
-
-
 
 module.exports = HashTable;

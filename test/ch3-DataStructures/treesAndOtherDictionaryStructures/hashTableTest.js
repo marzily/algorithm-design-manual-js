@@ -16,16 +16,12 @@ describe("4. Hash Table", function() {
     assert.isArray(hash.bins);
   });
 
-  xit("resizes bins if its input size increases", function() {
-    assert.equal(hash.bins.length, 0);
-
-    hash.increaseInputSize(3);
-
+  it("sizes bins based on its input size ", function() {
     assert.equal(hash.bins.length, 8);
   });
 
   xdescribe("hash table operations", function() {
-    var hashWithInputs = new hashTable();
+    // var hashWithInputs = new hashTable();
 
     xit("allows insertion", function() {
 
