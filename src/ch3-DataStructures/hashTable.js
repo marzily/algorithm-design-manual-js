@@ -14,18 +14,13 @@ HashTable.prototype.initializeBins = function() {
 HashTable.prototype.resetSize = function(inputSize) {
   this.inputSize = inputSize;
 
-  var maxSize = this.loadFactor * this.bins.length;
-  var minSize = this.loadFactor * (this.bins.length / 2);
-
-  if (this.inputSize > minSize && this.inputSize <= maxSize) {
-    return;
-  } else if (this.inputSize > maxSize) {
+  if (this.inputSize > this.loadFactor * this.bins.length) {
     var newBinLength = this.bins.length * 2;
-  } else if (this.inputSize <= minSize) {
+  } else if (this.inputSize <= this.loadFactor * (this.bins.length / 2)) {
     var newBinLength = this.bins.length / 2;
   }
 
-  this.remapElements(newBinLength);
+  if (newBinLength) this.remapElements(newBinLength);
 };
 
 HashTable.prototype.remapElements = function(newBinLength) {

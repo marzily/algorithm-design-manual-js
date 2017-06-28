@@ -1,8 +1,8 @@
 var assert = require('../../_vendor/chai').assert;
 var HashTable = require('../../src/ch3-DataStructures/hashTable');
 
-describe("4. Hash Table", function() {
-  describe("basic attributes", function() {
+describe("Hash Table", function() {
+  describe("Basic Attributes", function() {
     var hash = new HashTable(3);
 
     it("initializes with an input size", function() {
@@ -32,9 +32,15 @@ describe("4. Hash Table", function() {
       assert.equal(hash.inputSize, 2);
       assert.equal(hash.bins.length, 4);
     });
+
+    it("doesn't change size of bins if new input size does not breach thresholds", function() {
+      hash.resetSize(3);
+      assert.equal(hash.inputSize, 3);
+      assert.equal(hash.bins.length, 4);
+    });
   });
 
-  describe("operations", function() {
+  describe("Operations", function() {
     var testHash = new HashTable(3);
 
     xit("allows insertion", function() {
