@@ -1,5 +1,5 @@
 var assert = require('../../../_vendor/chai').assert;
-var LinkedList = require('../../../src/ch3-DataStructureExercises/stacksQueuesAndLists/reverseLinkedList');
+var LinkedList = require('../../../src/ch3-DataStructures/stacksQueuesAndLists/reverseLinkedList');
 
 describe("2. Reverse a Singly-Linked List", function() {
   describe("Linked List", function() {
