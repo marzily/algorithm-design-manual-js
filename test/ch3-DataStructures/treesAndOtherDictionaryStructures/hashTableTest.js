@@ -3,7 +3,7 @@ var hashTable = require('../../../src/ch3-DataStructures/treesAndOtherDictionary
 
 describe("4. Hash Table", function() {
   var hash = new hashTable(3);
-  
+
   it("initializes with an input size", function() {
     assert.equal(hash.inputSize, 3);
   });
@@ -12,7 +12,7 @@ describe("4. Hash Table", function() {
     assert.equal(hash.loadFactor, 0.75);
   });
 
-  xit("has bins", function() {
+  it("has bins", function() {
     assert.isArray(hash.bins);
   });
 
