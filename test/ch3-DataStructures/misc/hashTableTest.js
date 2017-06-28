@@ -1,9 +1,9 @@
 var assert = require('../../../_vendor/chai').assert;
-var hashTable = require('../../../src/ch3-DataStructures/treesAndOtherDictionaryStructures/hashTable');
+var HashTable = require('../../../src/ch3-DataStructures/misc/hashTable');
 
 describe("4. Hash Table", function() {
   describe("basic attributes", function() {
-    var hash = new hashTable(3);
+    var hash = new HashTable(3);
 
     it("initializes with an input size", function() {
       assert.equal(hash.inputSize, 3);
@@ -30,10 +30,15 @@ describe("4. Hash Table", function() {
   });
 
   describe("operations", function() {
-    // var hashWithInputs = new hashTable();
+    var testHash = new HashTable(3);
 
-    xit("allows insertion", function() {
+    it("allows insertion", function() {
+      testHash.set("hello", "world");
+      var indexKey = testHash.bins.indexOf("hello");
+      var indexValue = testHash.bins.indexOf("world");
 
+      assert.equal(indexKey, -1);
+      assert.notEqual(indexValue, -1);
     });
 
   });
