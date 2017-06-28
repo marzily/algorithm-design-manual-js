@@ -29,7 +29,7 @@ describe("4. Hash Table", function() {
     });
   });
 
-  xdescribe("hash table operations", function() {
+  describe("operations", function() {
     // var hashWithInputs = new hashTable();
 
     xit("allows insertion", function() {
