@@ -5,7 +5,7 @@ function HashTable(inputSize) {
 }
 
 HashTable.prototype.sizeBins = function() {
-  var lengthBins = (this.inputSize / this.loadFactor) * 2;
+  var lengthBins = Math.ceil(this.inputSize / this.loadFactor) * 2;
   this.bins = new Array(lengthBins);
 };
 
