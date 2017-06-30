@@ -15,7 +15,7 @@ describe("Doubly Linked List", function() {
     });
   });
 
-  describe("Operations", function() {
+  describe("append", function() {
     var list = new LinkedList()
 
     it("lets you append a node", function() {
@@ -49,4 +49,6 @@ describe("Doubly Linked List", function() {
       assert.equal(thirdNode.data, list.tail.data);
     });
   });
+
+  // describe("search");
 });

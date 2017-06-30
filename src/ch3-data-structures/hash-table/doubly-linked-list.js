@@ -8,17 +8,14 @@ function LinkedList() {
 LinkedList.prototype.append = function(val) {
   if (this.head === null) {
     this.head = this.tail = new Node(val);
-    return;
-  }
+  } else {
+    var newNode = new Node(val);
 
-  var current = this.head;
-  while (current.next !== null) {
-    current = current.next;
-  }
+    newNode.prev = this.tail;
+    this.tail.next = newNode
 
-  var newNode = new Node(val);
-  this.tail = current.next = newNode;
-  newNode.prev = current;
+    this.tail = newNode;
+  }
 };
 
 LinkedList.prototype.length = function() {
