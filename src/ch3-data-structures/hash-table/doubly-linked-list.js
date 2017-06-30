@@ -7,7 +7,7 @@ function LinkedList() {
 
 LinkedList.prototype.append = function(val) {
   if (this.head === null) {
-    this.head = new Node(val);
+    this.head = this.tail = new Node(val);
     return;
   }
 
@@ -17,7 +17,7 @@ LinkedList.prototype.append = function(val) {
   }
 
   var newNode = new Node(val);
-  current.next = newNode;
+  this.tail = current.next = newNode;
   newNode.prev = current;
 };
 

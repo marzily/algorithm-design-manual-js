@@ -17,6 +17,7 @@ describe("Doubly Linked List", function() {
 
   describe("Operations", function() {
     var list = new LinkedList()
+
     it("lets you append a node", function() {
       list.append(1);
 
@@ -26,14 +27,26 @@ describe("Doubly Linked List", function() {
     });
 
     it("updates its tail when a node is appended", function() {
-
-
+      assert.equal(list.tail.data, 1);
+      assert.equal(list.tail.prev, null);
+      assert.equal(list.tail.next, null);
     });
 
-    xit("sets pointers correctly when there are multiple nodes", function () {
+    it("correctly appends multiple nodes", function () {
+      list.append(2);
+      list.append(3);
 
+      assert.equal(list.head.data, 1);
 
+      var secondNode = list.head.next;
+      assert.equal(secondNode.data, 2);
+      assert.equal(secondNode.prev.data, list.head.data);
+      assert.equal(secondNode.next.data, 3)
 
+      var thirdNode = list.head.next.next;
+      assert.equal(thirdNode.data, 3);
+      assert.equal(thirdNode.next, null);
+      assert.equal(thirdNode.data, list.tail.data);
     });
   });
 });
