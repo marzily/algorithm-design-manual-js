@@ -1,3 +1,6 @@
+var murmurHash3 = require('murmur-hash').v3.x86.hash32;
+// Returns a 32bit hash as a unsigned int
+
 // Based on documentation for Java Hash Table
 
 function HashTable(inputSize) {
@@ -35,8 +38,15 @@ HashTable.prototype.remapElements = function(newBinLength) {
   this.bins = newBins;
 };
 
+HashTable.prototype.generateIndex = function(key) {
+  return murmurHash3(key) % this.bins.length;
+}
+
 HashTable.prototype.set = function(key) {
 
 };
+
+
+
 
 module.exports = HashTable;

@@ -1,5 +1,6 @@
 var assert = require('../../../_vendor/chai').assert;
 var HashTable = require('../../../src/ch3-data-structures/hash-table/hash-table');
+var murmurHash3 = require('murmur-hash').v3.x86.hash32;
 
 describe("Hash Table", function() {
   describe("Basic Attributes", function() {
@@ -43,7 +44,14 @@ describe("Hash Table", function() {
   describe("Operations", function() {
     var testHash = new HashTable(3);
 
-    xit("allows insertion", function() {
+    it("hashes a key to an index within the range of the size of the bins", function() {
+      var i = testHash.generateIndex("hello");
+
+      assert.isAbove(i, -1);
+      assert.isBelow(i, testHash.bins.length);
+    });
+
+    it("inserts a value", function() {
       testHash.set("hello", "world");
       var indexKey = testHash.bins.indexOf("hello");
       var indexValue = testHash.bins.indexOf("world");
