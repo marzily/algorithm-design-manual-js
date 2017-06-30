@@ -60,5 +60,11 @@ describe("Hash Table", function() {
       assert.notEqual(indexValue, -1);
     });
 
+    it("extracts a value", function() {
+      var val = testHash.get("hello");
+
+      assert.equal(val, "world");
+    });
+
   });
 });
