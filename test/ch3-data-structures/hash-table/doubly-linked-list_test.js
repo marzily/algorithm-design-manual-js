@@ -4,18 +4,22 @@ var Node = require('../../../src/ch3-data-structures/hash-table/linked-list-node
 
 describe("Doubly Linked List", function() {
   describe("Basic Attributes", function() {
-    var list = new LinkedList(1);
+    var list = new LinkedList();
 
     it("has a head", function() {
-      assert.isDefined(list.head);
-    });
-
-    it("assigns its head to a node", function() {
-      assert.equal(list.head.data, 1);
+      assert.equal(list.head, null);
     });
 
     it("has a tail", function() {
-      assert.isDefined(list.tail);
+      assert.equal(list.tail, null);
+    });
+
+    xit("assigns its head to a node", function() {
+      assert.equal(list.head.data);
+    });
+
+    xit("points its tail to the correct node if there is only one", function() {
+
     });
 
     xit("tracks its total length", function() {
