@@ -43,7 +43,7 @@ HashTable.prototype.generateIndex = function(key) {
 }
 
 HashTable.prototype.set = function(key) {
-
+  
 };
 
 
