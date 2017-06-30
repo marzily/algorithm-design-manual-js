@@ -6,13 +6,17 @@ function LinkedList() {
 }
 
 LinkedList.prototype.append = function(val) {
-  var current = this;
+  if (this.head === null) {
+    this.head = new Node(val);
+    return;
+  }
 
+  var current = this.head;
   while (current.next !== null) {
     current = current.next;
   }
 
-  var newNode = new LinkedList(val);
+  var newNode = new Node(val);
   current.next = newNode;
   newNode.prev = current;
 };

@@ -4,44 +4,35 @@ var Node = require('../../../src/ch3-data-structures/hash-table/linked-list-node
 
 describe("Doubly Linked List", function() {
   describe("Basic Attributes", function() {
-    var list = new LinkedList();
+    var emptyList = new LinkedList();
 
     it("has a head", function() {
-      assert.equal(list.head, null);
+      assert.equal(emptyList.head, null);
     });
 
     it("has a tail", function() {
-      assert.equal(list.tail, null);
+      assert.equal(emptyList.tail, null);
+    });
+  });
+
+  describe("Operations", function() {
+    var list = new LinkedList()
+    it("lets you append a node", function() {
+      list.append(1);
+
+      assert.equal(list.head.data, 1);
+      assert.equal(list.head.prev, null);
+      assert.equal(list.head.next, null);
     });
 
-    xit("assigns its head to a node", function() {
-      assert.equal(list.head.data);
-    });
+    it("updates its tail when a node is appended", function() {
 
-    xit("points its tail to the correct node if there is only one", function() {
 
     });
 
-    xit("tracks its total length", function() {
-      assert.equal(head.length(), 1);
-    });
+    xit("sets pointers correctly when there are multiple nodes", function () {
 
-    xit("correctly assigns a new node to its next pointer", function() {
-      head.append(2);
 
-      assert.equal(head.next.data, 2);
-      assert.equal(head.next.prev.data, 1);
-    });
-
-    xit("tracks how many nodes there are in a list", function() {
-      assert.equal(head.length(), 2);
-
-      head.append(3);
-
-      assert.equal(head.length(), 3);
-    });
-
-    xit("has a pointer to its tail", function() {
 
     });
   });
