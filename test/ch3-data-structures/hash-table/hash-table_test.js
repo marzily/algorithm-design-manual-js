@@ -1,5 +1,5 @@
 var assert = require('../../../_vendor/chai').assert;
-var HashTable = require('../../../src/ch3-DataStructures/hashTable/hashTable');
+var HashTable = require('../../../src/ch3-data-structures/hash-table/hash-table');
 
 describe("Hash Table", function() {
   describe("Basic Attributes", function() {

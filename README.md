@@ -1,4 +1,4 @@
-# algorithmDesignManualJS
+# algorithm-design-manual-js
 
 Solution to exercises in [The Algorithm Design Manual](http://www.algorist.com/) coded in JavaScript.
 
