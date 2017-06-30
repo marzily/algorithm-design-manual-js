@@ -1,5 +1,5 @@
 var assert = require('../../../_vendor/chai').assert;
-var Node = require('../../../src/ch3-data-structures/hash-table/node');
+var Node = require('../../../src/ch3-data-structures/hash-table/linked-list-node');
 
 describe("Doubly Linked List Node", function() {
   var node = new Node(1);
