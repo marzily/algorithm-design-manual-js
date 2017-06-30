@@ -1,7 +1,8 @@
+var Node = require('../../../src/ch3-data-structures/hash-table/linked-list-node');
+
 function LinkedList(val) {
-  this.data = val;
-  this.prev = null;
-  this.next = null;
+  this.head = new Node(val);
+  this.tail = this.head;
 }
 
 LinkedList.prototype.append = function(val) {
