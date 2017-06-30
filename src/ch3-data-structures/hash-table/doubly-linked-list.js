@@ -11,7 +11,9 @@ LinkedList.prototype.append = function(val) {
     current = current.next;
   }
 
-  current.next = new LinkedList(val);
+  var newNode = new LinkedList(val);
+  current.next = newNode;
+  newNode.prev = current;
 };
 
 LinkedList.prototype.length = function() {

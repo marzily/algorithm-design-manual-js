@@ -25,9 +25,10 @@ describe("Doubly Linked List", function() {
       head.append(2);
 
       assert.equal(head.next.data, 2);
+      assert.equal(head.next.prev.data, 1);
     });
 
-    it("tracks how many nodes there are in a list", function() {
+    xit("tracks how many nodes there are in a list", function() {
       assert.equal(head.length(), 2);
 
       head.append(3);
