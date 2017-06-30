@@ -66,5 +66,13 @@ describe("Hash Table", function() {
       assert.equal(val, "world");
     });
 
+    it("handles collisions", function() {
+      var i = testHash.generateIndex("hello");
+
+      testHash.bins[i] = "collision!";
+
+      assert.equal(testHash.get("hello"), "world");
+    });
+
   });
 });
