@@ -1,6 +1,5 @@
 var assert = require('../../../_vendor/chai').assert;
 var LinkedList = require('../../../src/ch3-data-structures/hash-table/doubly-linked-list');
-var Node = require('../../../src/ch3-data-structures/hash-table/linked-list-node');
 
 describe("Doubly Linked List", function() {
   describe("Basic Attributes", function() {
