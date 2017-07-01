@@ -41,11 +41,15 @@ LinkedList.prototype.delete = function(val) {
     return;
   }
 
-  var prevNode = node.prev;
   var nextNode = node.next;
-
-  prevNode.next = nextNode;
-  nextNode.prev = prevNode;
+  if (this.head === node) {
+    this.head = nextNode;
+    nextNode.prev = null;
+  } else {
+    var prevNode = node.prev;
+    prevNode.next = nextNode;
+    nextNode.prev = prevNode;
+  }
 
   return node;
 }
