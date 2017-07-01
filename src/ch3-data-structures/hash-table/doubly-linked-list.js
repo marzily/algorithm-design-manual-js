@@ -34,4 +34,20 @@ LinkedList.prototype.get = function(val) {
   return null;
 };
 
+LinkedList.prototype.delete = function(val) {
+  var node = this.get(val);
+
+  if (node === null) {
+    return;
+  }
+
+  var prevNode = node.prev;
+  var nextNode = node.next;
+
+  prevNode.next = nextNode;
+  nextNode.prev = prevNode;
+
+  return node;
+}
+
 module.exports = LinkedList;

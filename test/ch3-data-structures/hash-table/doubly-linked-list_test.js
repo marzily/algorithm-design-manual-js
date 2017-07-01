@@ -7,11 +7,11 @@ describe("Doubly Linked List", function() {
     var emptyList = new LinkedList();
 
     it("has a head", function() {
-      assert.equal(emptyList.head, null);
+      assert.isDefined(emptyList.head);
     });
 
     it("has a tail", function() {
-      assert.equal(emptyList.tail, null);
+      assert.isDefined(emptyList.tail);
     });
   });
 
@@ -22,14 +22,14 @@ describe("Doubly Linked List", function() {
       list.append(1);
 
       assert.equal(list.head.data, 1);
-      assert.equal(list.head.prev, null);
-      assert.equal(list.head.next, null);
+      assert.isNull(list.head.prev);
+      assert.isNull(list.head.next);
     });
 
     it("updates its tail when a node is appended", function() {
-      assert.equal(list.tail.data, 1);
-      assert.equal(list.tail.prev, null);
-      assert.equal(list.tail.next, null);
+      assert.equal(list.tail.data, 1)
+      assert.isNull(list.tail.prev);
+      assert.isNull(list.tail.next);
     });
 
     it("correctly appends multiple nodes", function () {
@@ -45,7 +45,7 @@ describe("Doubly Linked List", function() {
 
       var thirdNode = list.head.next.next;
       assert.equal(thirdNode.data, 3);
-      assert.equal(thirdNode.next, null);
+      assert.isNull(thirdNode.next);
       assert.equal(thirdNode.data, list.tail.data);
     });
   });
@@ -61,6 +61,16 @@ describe("Doubly Linked List", function() {
       var node = list.get(5)
 
       assert.isNull(node);
+    });
+  });
+
+  describe("delete", function() {
+    it("correctly updates links when deleting a node", function() {
+      list.delete(2);
+
+      assert.equal(list.head.data, 1);
+      assert.equal(list.head.next.data, 3);
+      assert.isNull(list.head.next.next);
     });
   });
 });
