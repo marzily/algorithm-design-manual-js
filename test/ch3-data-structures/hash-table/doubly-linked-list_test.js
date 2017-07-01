@@ -15,9 +15,9 @@ describe("Doubly Linked List", function() {
     });
   });
 
-  describe("append", function() {
-    var list = new LinkedList()
+  var list = new LinkedList()
 
+  describe("append", function() {
     it("lets you append a node", function() {
       list.append(1);
 
@@ -50,5 +50,17 @@ describe("Doubly Linked List", function() {
     });
   });
 
-  // describe("search");
+  describe("search", function() {
+    it("returns the node that contains the data", function() {
+      var node = list.get(2)
+
+      assert.equal(node.data, 2);
+    });
+
+    it("returns null if data is not in list", function() {
+      var node = list.get(5)
+
+      assert.isNull(node);
+    });
+  });
 });

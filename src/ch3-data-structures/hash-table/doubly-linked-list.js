@@ -18,16 +18,20 @@ LinkedList.prototype.append = function(val) {
   }
 };
 
-LinkedList.prototype.length = function() {
-  var current = this;
-  var length = 1;
+LinkedList.prototype.get = function(val) {
+  if (val === this.head.data) {
+    return this.head;
+  }
 
-  while (current.next !== null) {
-    length += 1;
+  var current = this.head.next;
+  while (current) {
+    if (current.data === val) {
+      return current;
+    }
     current = current.next;
   }
 
-  return length;
+  return null;
 };
 
 module.exports = LinkedList;
