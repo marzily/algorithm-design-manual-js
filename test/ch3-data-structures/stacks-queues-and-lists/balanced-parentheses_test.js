@@ -1,12 +1,12 @@
 var assert = require('../../../_vendor/chai').assert;
-var properlyNested = require('../../../src/ch3-DataStructureExercises/stacksQueuesAndLists/balancedParentheses');
+var properlyNested = require('../../../src/ch3-data-structures/stacks-queues-and-lists/balanced-parentheses');
 
 describe("1. Balanced Parentheses", function() {
   it("returns true when parentheses are properly nested", function() {
     var input = "((())())()";
     var result = properlyNested(input);
 
-    assert(result);
+    assert.isTrue(result);
   });
 
   it ("returns first index when parentheses are not properly nested", function () {
