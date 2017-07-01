@@ -37,15 +37,18 @@ LinkedList.prototype.get = function(val) {
 LinkedList.prototype.delete = function(val) {
   var node = this.get(val);
 
-  if (node === null) {
-    return;
-  }
-
-  var nextNode = node.next;
-  if (this.head === node) {
+  if (this.head === this.tail && this.head === node) {
+    this.head = this.tail = null;
+  } else if (this.head === node) {
+    var nextNode = node.next;
     this.head = nextNode;
-    nextNode.prev = null;
+    this.head.prev = null;
+  } else if (this.tail === node) {
+    var prevNode = node.prev;
+    this.tail = prevNode;
+    this.tail.next = null;
   } else {
+    var nextNode = node.next;
     var prevNode = node.prev;
     prevNode.next = nextNode;
     nextNode.prev = prevNode;

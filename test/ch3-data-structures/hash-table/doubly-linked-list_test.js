@@ -79,5 +79,12 @@ describe("Doubly Linked List", function() {
       assert.equal(list.head.data, 3);
       assert.isNull(list.head.next);
     });
+
+    it("updates its tail if the tail is deleted", function() {
+      list.delete(3);
+
+      assert.isNull(list.head);
+      assert.isNull(list.tail);
+    });
   });
 });
