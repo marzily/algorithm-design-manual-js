@@ -1,5 +1,6 @@
-function Node(data) {
-  this.data = data;
+function Node(key, value) {
+  this.key = key;
+  this.value = value;
   this.prev = null;
   this.next = null;
 }
