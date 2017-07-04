@@ -18,14 +18,14 @@ LinkedList.prototype.append = function(key, val) {
   }
 };
 
-LinkedList.prototype.get = function(val) {
-  if (val === this.head.data) {
+LinkedList.prototype.get = function(key) {
+  if (key === this.head.key) {
     return this.head;
   }
 
   var current = this.head.next;
   while (current) {
-    if (current.data === val) {
+    if (current.key === key) {
       return current;
     }
     current = current.next;

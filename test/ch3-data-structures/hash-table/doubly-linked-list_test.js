@@ -51,7 +51,7 @@ describe("Doubly Linked List", function() {
 
   describe("search", function() {
     it("returns the node that contains the data", function() {
-      var node = list.get(2)
+      var node = list.get("key2")
 
       assert.equal(node.value, 2);
     });
