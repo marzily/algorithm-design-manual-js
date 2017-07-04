@@ -65,22 +65,22 @@ describe("Doubly Linked List", function() {
 
   describe("delete", function() {
     it("correctly updates links when deleting a node", function() {
-      list.delete(2);
+      list.delete("key2");
 
-      assert.equal(list.head.data, 1);
-      assert.equal(list.head.next.data, 3);
+      assert.equal(list.head.value, 1);
+      assert.equal(list.head.next.value, 3);
       assert.isNull(list.head.next.next);
     });
 
     it("updates its head if the head is deleted", function() {
-      list.delete(1);
+      list.delete("key1");
 
-      assert.equal(list.head.data, 3);
+      assert.equal(list.head.value, 3);
       assert.isNull(list.head.next);
     });
 
     it("updates its tail if the tail is deleted", function() {
-      list.delete(3);
+      list.delete("key3");
 
       assert.isNull(list.head);
       assert.isNull(list.tail);

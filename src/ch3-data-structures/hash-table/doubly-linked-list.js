@@ -34,8 +34,8 @@ LinkedList.prototype.get = function(key) {
   return null;
 };
 
-LinkedList.prototype.delete = function(val) {
-  var node = this.get(val);
+LinkedList.prototype.delete = function(key) {
+  var node = this.get(key);
 
   if (this.head === this.tail && this.head === node) {
     this.head = this.tail = null;
