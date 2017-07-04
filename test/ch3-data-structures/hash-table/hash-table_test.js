@@ -51,16 +51,8 @@ describe("Hash Table", function() {
       assert.isBelow(i, testHash.bins.length);
     });
 
-    it("inserts a value", function() {
+    it("inserts and extracts a value", function() {
       testHash.set("hello", "world");
-      var indexKey = testHash.bins.indexOf("hello");
-      var indexValue = testHash.bins.indexOf("world");
-
-      assert.equal(indexKey, -1);
-      assert.notEqual(indexValue, -1);
-    });
-
-    it("extracts a value", function() {
       var val = testHash.get("hello");
 
       assert.equal(val, "world");

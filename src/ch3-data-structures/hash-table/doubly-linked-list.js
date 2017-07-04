@@ -1,4 +1,4 @@
-var Node = require('../../../src/ch3-data-structures/hash-table/linked-list-node');
+var Node = require('./linked-list-node');
 
 function LinkedList() {
   this.head = null;

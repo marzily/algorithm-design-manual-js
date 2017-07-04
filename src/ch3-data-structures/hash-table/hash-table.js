@@ -1,5 +1,6 @@
 var murmurHash3 = require('murmur-hash').v3.x86.hash32;
 // Returns a 32bit hash as a unsigned int
+var LinkedList = require('./doubly-linked-list');
 
 function HashTable(inputSize) {
   this.inputSize = inputSize;
@@ -42,14 +43,18 @@ HashTable.prototype.generateIndex = function(key) {
 
 HashTable.prototype.set = function(key, value) {
   var i = this.generateIndex(key);
+  var list = new LinkedList()
+  list.append(key, value)
 
-  this.bins[i] = value;
+  this.bins[i] = list;
 };
 
 HashTable.prototype.get = function(key) {
   var i = this.generateIndex(key);
+  var list = this.bins[i];
+  var node = list.get(key);
 
-  return this.bins[i];
+  return node.value;
 };
 
 
