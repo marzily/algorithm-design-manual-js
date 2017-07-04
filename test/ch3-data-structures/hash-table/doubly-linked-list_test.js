@@ -15,12 +15,12 @@ describe("Doubly Linked List", function() {
   });
 
   var list = new LinkedList()
-
   describe("append", function() {
     it("lets you append a node", function() {
-      list.append(1);
+      list.append("key1", 1);
 
-      assert.equal(list.head.data, 1);
+      assert.equal(list.head.key, "key1");
+      assert.equal(list.head.value, 1);
       assert.isNull(list.head.prev);
       assert.isNull(list.head.next);
     });

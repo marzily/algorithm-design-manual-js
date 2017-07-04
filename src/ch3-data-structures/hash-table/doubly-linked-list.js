@@ -5,12 +5,12 @@ function LinkedList() {
   this.tail = null;
 }
 
-LinkedList.prototype.append = function(val) {
-  if (this.head === null) {
-    this.head = this.tail = new Node(val);
-  } else {
-    var newNode = new Node(val);
+LinkedList.prototype.append = function(key, val) {
+  var newNode = new Node(key, val);
 
+  if (this.head === null) {
+    this.head = this.tail = newNode;
+  } else {
     newNode.prev = this.tail;
     this.tail.next = newNode
 
