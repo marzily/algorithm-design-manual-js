@@ -26,26 +26,26 @@ describe("Doubly Linked List", function() {
     });
 
     it("updates its tail when a node is appended", function() {
-      assert.equal(list.tail.data, 1)
+      assert.equal(list.tail.value, 1);
       assert.isNull(list.tail.prev);
       assert.isNull(list.tail.next);
     });
 
     it("correctly appends multiple nodes", function () {
-      list.append(2);
-      list.append(3);
+      list.append("key2", 2);
+      list.append("key3", 3);
 
-      assert.equal(list.head.data, 1);
+      assert.equal(list.head.value, 1);
 
       var secondNode = list.head.next;
-      assert.equal(secondNode.data, 2);
-      assert.equal(secondNode.prev.data, list.head.data);
-      assert.equal(secondNode.next.data, 3)
+      assert.equal(secondNode.value, 2);
+      assert.equal(secondNode.prev.value, list.head.value);
+      assert.equal(secondNode.next.value, 3)
 
       var thirdNode = list.head.next.next;
-      assert.equal(thirdNode.data, 3);
+      assert.equal(thirdNode.value, 3);
       assert.isNull(thirdNode.next);
-      assert.equal(thirdNode.data, list.tail.data);
+      assert.equal(thirdNode.value, list.tail.value);
     });
   });
 
@@ -53,7 +53,7 @@ describe("Doubly Linked List", function() {
     it("returns the node that contains the data", function() {
       var node = list.get(2)
 
-      assert.equal(node.data, 2);
+      assert.equal(node.value, 2);
     });
 
     it("returns null if data is not in list", function() {
