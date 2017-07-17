@@ -89,7 +89,7 @@ function generateCollisionKey(hashTableIndex, hashSize) {
     j = murmurHash3(collisionKey) % hashSize;
   }
 
-  return collisionKey
+  return collisionKey;
 }
 
 function getRandomLetter(min, max) {
