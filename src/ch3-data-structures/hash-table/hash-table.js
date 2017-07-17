@@ -43,10 +43,14 @@ HashTable.prototype.generateIndex = function(key) {
 
 HashTable.prototype.set = function(key, value) {
   var i = this.generateIndex(key);
-  var list = new LinkedList()
-  list.append(key, value)
 
-  this.bins[i] = list;
+  if (this.bins[i] === undefined) {
+    var list = new LinkedList();
+    list.append(key, value);
+    this.bins[i] = list;
+  } else {
+    this.bins[i].append(key, value);
+  }
 };
 
 HashTable.prototype.get = function(key) {
@@ -54,12 +58,15 @@ HashTable.prototype.get = function(key) {
   var list = this.bins[i];
   var node = list.get(key);
 
-  return node.value;
+  return node ? node.value : node;
 };
 
+HashTable.prototype.delete = function(key) {
+  var i = this.generateIndex(key);
+  var list = this.bins[i];
+  var node = list.delete(key);
 
-
-
-
+  return node.value;
+};
 
 module.exports = HashTable;
