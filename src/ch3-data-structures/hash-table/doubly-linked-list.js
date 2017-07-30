@@ -1,16 +1,16 @@
-var Node = require('../../../src/ch3-data-structures/hash-table/linked-list-node');
+var Node = require('./linked-list-node');
 
 function LinkedList() {
   this.head = null;
   this.tail = null;
 }
 
-LinkedList.prototype.append = function(val) {
-  if (this.head === null) {
-    this.head = this.tail = new Node(val);
-  } else {
-    var newNode = new Node(val);
+LinkedList.prototype.append = function(key, val) {
+  var newNode = new Node(key, val);
 
+  if (this.head === null) {
+    this.head = this.tail = newNode;
+  } else {
     newNode.prev = this.tail;
     this.tail.next = newNode
 
@@ -18,14 +18,14 @@ LinkedList.prototype.append = function(val) {
   }
 };
 
-LinkedList.prototype.get = function(val) {
-  if (val === this.head.data) {
+LinkedList.prototype.get = function(key) {
+  if (key === this.head.key) {
     return this.head;
   }
 
   var current = this.head.next;
   while (current) {
-    if (current.data === val) {
+    if (current.key === key) {
       return current;
     }
     current = current.next;
@@ -34,8 +34,8 @@ LinkedList.prototype.get = function(val) {
   return null;
 };
 
-LinkedList.prototype.delete = function(val) {
-  var node = this.get(val);
+LinkedList.prototype.delete = function(key) {
+  var node = this.get(key);
 
   if (this.head === this.tail && this.head === node) {
     this.head = this.tail = null;

@@ -51,28 +51,48 @@ describe("Hash Table", function() {
       assert.isBelow(i, testHash.bins.length);
     });
 
-    it("inserts a value", function() {
+    it("inserts and extracts a value", function() {
       testHash.set("hello", "world");
-      var indexKey = testHash.bins.indexOf("hello");
-      var indexValue = testHash.bins.indexOf("world");
-
-      assert.equal(indexKey, -1);
-      assert.notEqual(indexValue, -1);
-    });
-
-    it("extracts a value", function() {
       var val = testHash.get("hello");
 
       assert.equal(val, "world");
     });
 
-    xit("handles collisions", function() {
+    var key;
+    it("handles collisions", function() {
       var i = testHash.generateIndex("hello");
-
-      testHash.bins[i] = "collision!";
+      key = generateCollisionKey(i, testHash.bins.length);
+      testHash.set(key, "collision!");
 
       assert.equal(testHash.get("hello"), "world");
+      assert.equal(testHash.get(key), "collision!");
     });
 
+    it("deletes entries", function() {
+      assert.equal(testHash.delete(key), "collision!");
+      assert.equal(testHash.get("hello"), "world");
+      assert.isNull(testHash.get(key));
+    });
   });
 });
+
+function generateCollisionKey(hashTableIndex, hashSize) {
+  var keyLength = Math.floor(Math.random() * 5) + 1;
+
+  var j;
+  while (j != hashTableIndex) {
+    var collisionKey = "";
+    for (var i = 0; i < keyLength; i++) {
+      collisionKey += getRandomLetter(97, 122);
+    }
+
+    j = murmurHash3(collisionKey) % hashSize;
+  }
+
+  return collisionKey;
+}
+
+function getRandomLetter(min, max) {
+  var num = Math.random() * (max - min) + min;
+  return String.fromCharCode(num);
+}
